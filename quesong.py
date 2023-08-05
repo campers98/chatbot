@@ -67,7 +67,7 @@ def main() -> None:
     dispatcher.add_handler(CommandHandler("start", start))
 
     # Add message handler to respond to user messages
-    dispatcher.add_handler(MessageHandler(~CommandHandler("start"), start))
+    dispatcher.add_handler(MessageHandler(CommandHandler("start"), start))
 
     # Start the Bot
     updater.start_polling()
