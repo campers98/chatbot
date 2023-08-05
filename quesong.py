@@ -60,7 +60,7 @@ def handle_message(update: Update, _: CallbackContext) -> None:
 
 def main() -> None:
     # Replace 'YOUR_BOT_TOKEN' with the actual bot token obtained from the BotFather
-    updater = Updater("YOUR_BOT_TOKEN")
+    updater = Updater("6348947600:AAGyq_j6l8HXqT2Go8htNBQceJf1uaLxt4M")
 
     dispatcher = updater.dispatcher
     # Add command handler to respond to the '/start' command
