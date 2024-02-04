@@ -1,0 +1,28 @@
+name: Uptime CI
+on:
+  schedule:
+   - cron: "* * * * *"
+  repository_dispatch:
+   types: [uptime]
+  workflow_dispatch:
+jobs:
+  release:
+    name: Check status
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/ Checkout@v3
+      - name: Update README
+        run: |
+          # Get the current date and time in desired format
+          current_date=$(date +"%Y-%m-%d %H:%M:%S")
+          # Append the date and time to the README file
+          echo "Last updated: $current_date" >> README.md
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: README.md
+          message: "Update README with current date and time"
+          committer: GitHub Actions <actions@github.com>
+          author: GitHub Actions <actions@github.com>
+          branch: main
