@@ -14,7 +14,7 @@ nlp_ta = spacy.load('ta')
 nlp_te = spacy.load('te')
 
 # Telegram Bot API token
-TELEGRAM_TOKEN = '6348947600:AAGyq_j6l8HXqT2Go8htNBQceJf1uaLxt4M'
+TELEGRAM_TOKEN = ''
 
 # Initialize the Telegram updater and dispatcher
 updater = Updater(token=TELEGRAM_TOKEN)
